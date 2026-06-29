@@ -1,0 +1,576 @@
+$ vitest run
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.9 [39m[90mE:/Freelancer/Frontend Mentor/foreign-exchange-checker[39m
+
+ [32mΓ£ô[39m src/store.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+stderr | src/components/App.test.tsx > App > renders the header with FX_CHECKER
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > renders the header with FX_CHECKER
+An update to Ticker inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > renders the converter section
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > renders the converter section
+An update to Ticker inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+stderr | src/components/App.test.tsx > App > renders all four tabs
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > renders all four tabs
+An update to Ticker inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+stderr | src/components/App.test.tsx > App > shows empty state for favorites tab
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > shows empty state for favorites tab
+An update to Ticker inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > shows empty state for log tab
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > shows empty state for log tab
+An update to Ticker inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > shows badge counts on favorites and log tabs
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Converter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to History inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/App.test.tsx > App > shows badge counts on favorites and log tabs
+An update to Ticker inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [31mΓ¥»[39m src/components/App.test.tsx [2m([22m[2m11 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 746[2mms[22m[39m
+     [32mΓ£ô[39m renders the header with FX_CHECKER[32m 72[2mms[22m[39m
+     [32mΓ£ô[39m renders the converter section[32m 29[2mms[22m[39m
+     [32mΓ£ô[39m renders the ticker after fetch resolves[32m 191[2mms[22m[39m
+     [32mΓ£ô[39m renders all four tabs[32m 19[2mms[22m[39m
+[31m     [31m├ù[31m switches between tabs[39m[32m 53[2mms[22m[39m
+     [32mΓ£ô[39m toggles provider[32m 126[2mms[22m[39m
+     [32mΓ£ô[39m toggles favorite on converter after rate loads[32m 127[2mms[22m[39m
+     [32mΓ£ô[39m logs a conversion after rate loads[32m 80[2mms[22m[39m
+     [32mΓ£ô[39m shows empty state for favorites tab[32m 16[2mms[22m[39m
+     [32mΓ£ô[39m shows empty state for log tab[32m 14[2mms[22m[39m
+     [32mΓ£ô[39m shows badge counts on favorites and log tabs[32m 14[2mms[22m[39m
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 1 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+ FAIL  src/components/App.test.tsx > App > switches between tabs
+TestingLibraryElementError: Unable to find an element with the text: Conversion log. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="min-h-screen bg-neutral-900 text-neutral-50 font-mono"
+    >
+      <div
+        class="mx-auto max-w-screen-xl"
+      >
+        <header
+          class="flex items-center justify-between h-12 px-4"
+        >
+          <span
+            class="flex items-center gap-2 text-sm font-bold tracking-wider"
+          >
+            <svg
+              aria-hidden="true"
+              fill="none"
+              height="20"
+              viewBox="0 0 20 20"
+              width="20"
+            >
+              <rect
+                fill="#CEF739"
+                height="20"
+                rx="4"
+                width="20"
+              />
+              <path
+                d="M13 2L7 11h3l-2 7 8-10h-4l3-6H13z"
+                fill="#0A0A0A"
+              />
+            </svg>
+            FX_CHECKER
+          </span>
+          <div
+            class="flex items-center gap-2"
+          >
+            <span
+              class="text-[10px] text-neutral-200 font-medium tracking-wider uppercase"
+            >
+              170
+               Currencies ┬╖ EOD ┬╖ 
+              Blended
+            </span>
+            <button
+              aria-label="Switch to CBE"
+              class="flex items-center gap-1.5 px-2 py-1 rounded text-[10px] font-medium tracking-wider uppercase
+            border border-neutral-400 text-neutral-100 hover:bg-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-lime-500"
+              />
+              Blended
+              <span
+                class="text-neutral-400"
+              >
+                /
+              </span>
+              CBE
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-neutral-400"
+              />
+            </button>
+          </div>
+        </header>
+        <div
+          class="h-8 bg-lime-500 flex items-center overflow-hidden"
+        >
+          <span
+            class="flex items-center gap-2 h-full px-3 bg-lime-500 shrink-0"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-green-500 shrink-0"
+            />
+            <span
+              class="text-[10px] font-medium text-neutral-900 uppercase tracking-wider"
+            >
+              Live markets
+            </span>
+          </span>
+          <div
+            class="flex items-center gap-4 overflow-x-auto px-3 [&::-webkit-scrollbar]:hidden"
+          >
+            <div
+              class="flex items-center gap-2 shrink-0 text-[10px]"
+            >
+              <span
+                class="text-neutral-900 font-medium"
+              >
+                USD/EUR
+              </span>
+              <span
+                class="text-neutral-900 font-bold"
+              >
+                49.5100
+              </span>
+              <span
+                class="flex items-center gap-0.5 text-neutral-900"
+              >
+                <svg
+                  fill="currentColor"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  width="8"
+                >
+                  <path
+                    d="M4 0l4 5H0z"
+                  />
+                </svg>
+                0.0%
+              </span>
+            </div>
+            <div
+              class="flex items-center gap-2 shrink-0 text-[10px]"
+            >
+              <span
+                class="text-neutral-900 font-medium"
+              >
+                USD/GBP
+              </span>
+              <span
+                class="text-neutral-900 font-bold"
+              >
+                49.5100
+              </span>
+              <span
+                class="flex items-center gap-0.5 text-neutral-900"
+              >
+                <svg
+                  fill="currentColor"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  width="8"
+                >
+                  <path
+                    d="M4 0l4 5H0z"
+                  />
+                </svg>
+                0.0%
+              </span>
+            </div>
+          </div>
+        </div>
+        <section
+          class="py-6 px-4"
+        >
+          <h2
+            class="text-lg uppercase tracking-wider text-neutral-50 mb-4"
+          >
+            Check the rate
+          </h2>
+          <div
+            class="bg-neutral-700 rounded-xl p-4 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-4"
+          >
+            <div
+              class="flex-1"
+            >
+              <label
+                class="text-[10px] text-neutral-200 uppercase tracking-wider mb-1 block"
+              >
+                Send
+              </label>
+              <div
+                class="bg-neutral-600 rounded-lg p-3 flex items-center gap-2"
+              >
+                <input
+                  class="flex-1 ...
+ Γ¥» Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:37:19
+ Γ¥» node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ Γ¥» node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ Γ¥» node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ Γ¥» src/components/App.test.tsx:81:19
+     79|
+     80|     fireEvent.click(screen.getByText('Log'))
+     81|     expect(screen.getByText('Conversion log')).toBeInTheDocument()
+       |                   ^
+     82|
+     83|     fireEvent.click(screen.getByText('History'))
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/1]ΓÄ»
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Unhandled Errors ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Uncaught Exception ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+Error: Value is null
+ Γ¥» ensureNotNull ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:137:15
+ Γ¥» PriceAxisWidget._internal_optimalWidth ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:9113:21
+ Γ¥» ChartWidget._private__adjustSizeImpl ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:10947:128
+ Γ¥» ChartWidget._private__syncGuiWithModel ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11189:14
+ Γ¥» ChartWidget._private__updateGui ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11141:14
+ Γ¥» ChartWidget._private__drawImpl ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11050:18
+ Γ¥» ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11129:26
+ Γ¥» invokeTheCallbackFunction node_modules/.pnpm/jsdom@29.1.1/node_modules/jsdom/lib/generated/idl/Function.js:19:26
+ Γ¥» runAnimationFrameCallbacks node_modules/.pnpm/jsdom@29.1.1/node_modules/jsdom/lib/jsdom/browser/Window.js:635:13
+ Γ¥» Timeout.<anonymous> node_modules/.pnpm/jsdom@29.1.1/node_modules/jsdom/lib/jsdom/browser/Window.js:613:11
+
+This error originated in "src/components/App.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "toggles favorite on converter after rate loads". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Uncaught Exception ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+Error: Value is null
+ Γ¥» ensureNotNull ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:137:15
+ Γ¥» PriceAxisWidget._internal_optimalWidth ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:9113:21
+ Γ¥» ChartWidget._private__adjustSizeImpl ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:10947:128
+ Γ¥» ChartWidget._private__syncGuiWithModel ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11189:14
+ Γ¥» ChartWidget._private__updateGui ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11141:14
+ Γ¥» ChartWidget._private__drawImpl ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11050:18
+ Γ¥» ../../Frontend%20Mentor/foreign-exchange-checker/node_modules/.pnpm/lightweight-charts@5.2.0/node_modules/lightweight-charts/dist/lightweight-charts.development.mjs:11129:26
+ Γ¥» invokeTheCallbackFunction node_modules/.pnpm/jsdom@29.1.1/node_modules/jsdom/lib/generated/idl/Function.js:19:26
+ Γ¥» runAnimationFrameCallbacks node_modules/.pnpm/jsdom@29.1.1/node_modules/jsdom/lib/jsdom/browser/Window.js:635:13
+ Γ¥» Timeout.<anonymous> node_modules/.pnpm/jsdom@29.1.1/node_modules/jsdom/lib/jsdom/browser/Window.js:613:11
+
+This error originated in "src/components/App.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "logs a conversion after rate loads". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m15 passed[39m[22m[90m (16)[39m
+[2m     Errors [22m [1m[31m2 errors[39m[22m
+[2m   Start at [22m 19:39:24
+[2m   Duration [22m 4.29s[2m (transform 272ms, setup 536ms, import 803ms, tests 759ms, environment 4.43s)[22m
+
+[ELIFECYCLE] Test failed. See above for more details.

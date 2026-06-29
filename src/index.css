@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neutral-900: #0A0A0A;
+  --color-neutral-700: #171719;
+  --color-neutral-600: #202022;
+  --color-neutral-500: #2E2E2E;
+  --color-neutral-400: #3D3D3D;
+  --color-neutral-300: #454547;
+  --color-neutral-200: #9D9D9D;
+  --color-neutral-100: #C6C6C6;
+  --color-neutral-50: #FFFFFF;
+  --color-lime-500: #CEF739;
+  --color-lime-800: #283300;
+  --color-green-500: #42EB05;
+  --color-red-500: #FF4141;
+  --font-family-mono: 'JetBrains Mono', monospace;
+}

@@ -9,8 +9,8 @@
 | Name | Hex | Usage |
 |------|-----|-------|
 | Neutral 900 | #0A0A0A | Page background |
-| Neutral 700 | #171719 | Card backgrounds, converter boxes |
-| Neutral 600 | #202022 | Input fields, stat boxes |
+| Neutral 700 | #171719 | Card backgrounds, converter boxes, stat boxes, chart container |
+| Neutral 600 | #202022 | Input fields |
 | Neutral 500 | #2E2E2E | Hover backgrounds, secondary surfaces |
 | Neutral 400 | #3D3D3D | Borders, dividers, subtle outlines |
 | Neutral 300 | #454547 | Focus rings, active borders |
@@ -41,14 +41,14 @@ All text is monospace. Weights used: Regular (400), Medium (500), Bold (700).
 |--------|------|--------|-------------|----------------|-------|
 | 1 | 40px | Bold | 100% | -0.5px | Converter amounts (send/receive values) |
 | 1 (Tablet) | 32px | Bold | 100% | -0.5px | Converter amounts on tablet |
-| 2 | 20px | Regular | 120% | -0.5px | Section titles ("CHECK THE RATE"), chart pair labels |
-| 2 (Bold) | 20px | Bold | 140% | -0.5px | Stat values (OPEN, LAST, CHANGE), converted amounts in compare |
+| 2 | 20px | Regular | 120% | -0.5px | Section titles ("CHECK THE RATE"), stat values (OPEN, LAST, CHANGE) |
+| 2 (Bold) | 20px | Bold | 140% | -0.5px | Converted amounts in compare |
 | 3 | 16px | Regular | 120% | 1px | Tab labels, list item text, currency codes |
-| 3 (Medium) | 16px | Medium | 120% | 1px | Currency picker rows, favorite pair labels |
+| 3 (Medium) | 16px | Medium | 120% | 1px | Chart pair label ("USD/EUR"), currency picker rows, favorite pair labels |
 | 3 (Bold) | 16px | Bold | 110% | 1px | Tab bar active state, list headers ("PINNED PAIRS") |
-| 4 | 14px | Regular | 120% | 1px | Rate text ("1 USD = 0.8530 EUR"), stat labels, comparison rates |
-| 5 | 12px | Regular | 120% | 0.5px | Badge counts, ticker items, secondary info |
-| 5 (Medium) | 12px | Medium | 130% | 0.5px | Header right text ("55 CURRENCIES · EOD · ECB DATA"), section sublabels |
+| 4 | 14px | Regular | 120% | 1px | Stat labels (OPEN, LAST, CHANGE, % CHANGE), comparison rates |
+| 5 | 12px | Regular | 120% | 0.5px | Rate text ("1 USD = 0.8530 EUR"), badge counts, ticker items, secondary info |
+| 5 (Medium) | 12px | Medium | 130% | 0.5px | Header right text (provider name, currency count), section sublabels |
 | 6 | 10px | Regular | 100% | 0px | Fine print, chart axis labels, timestamps in log |
 
 ---
@@ -62,9 +62,9 @@ Single page, dark theme. Background Neutral 900 (#0A0A0A). All content centered 
 ## 4. Header
 
 - Left side: Logo icon (Lime 500 lightning bolt in rounded square) + "FX_CHECKER" text (Preset 3 Bold, Neutral 50)
-- Right side: "55 CURRENCIES · EOD · ECB DATA" (Preset 5 Medium, Neutral 100)
+- Right side: Provider Toggle — switches between `blended` (170+ currencies, all 84 central banks) and `CBE` (19 currencies, Central Bank of Egypt). Shows dynamic count and active provider name.
 - Height: ~48–60px, vertically centered content
-- Non-interactive, no hover states
+- Toggle has hover/focus states; rest of header is non-interactive
 
 ---
 
@@ -76,7 +76,7 @@ Immediately below header, full-width horizontal strip. Height: ~32–40px.
 - Rest of strip: horizontal scrolling content (CSS overflow or marquee animation)
 - Each ticker item: currency pair code (Neutral 100), rate in bold (Neutral 50), change indicator
 - Change indicator: Green 500 up arrow + Green 500 text for positive, Red 500 down arrow + Red 500 text for negative
-- Items separated by spacing, no visible dividers
+- Items separated by Neutral 500 (`#2e2e2e`) vertical stroke dividers
 - No interaction on individual items (display only)
 
 ---
@@ -101,7 +101,7 @@ Dark rounded container (Neutral 700 background, rounded corners ~12px).
   - Box background: Neutral 600, rounded corners
 
 - **Swap button (center, overlapping both boxes):**
-  - Rounded square button (Neutral 500 background, Neutral 400 border)
+  - Rounded square button (Neutral 600 background, Neutral 500 border)
   - Bidirectional arrow icon (↔ horizontal on desktop, ↕ on mobile)
   - Hover: Lime 500 background, Neutral 900 icon
   - Focus: Lime 500 focus ring
@@ -114,19 +114,19 @@ Dark rounded container (Neutral 700 background, rounded corners ~12px).
 
 **Below the two boxes, inside the card:**
 
-- Dashed horizontal border (Neutral 400, dashed)
-- Left: Rate text "1 USD = 0.8530 EUR" (Preset 4, Neutral 200)
+- Solid horizontal border (Neutral 500, `#2e2e2e`)
+- Left: Rate text "1 USD = 0.8530 EUR" (Preset 5, Neutral 50)
 - Right: Two action buttons side by side
 
 **Action buttons:**
 
 - "★ FAVORITED" / "☆ FAVORITE":
   - Favorited: Lime 500 background, Neutral 900 text, solid star
-  - Not favorited: Neutral 400 border, Lime 500 text, outlined star
+  - Not favorited: Neutral 600 background, Neutral 300 border, Neutral 200 text, outlined star
   - Hover: slight opacity change
   - Focus: Lime 500 focus ring
 - "LOG CONVERSION":
-  - Neutral 400 border, Neutral 50 text
+  - Neutral 300 border, Neutral 200 text
   - Hover: Neutral 500 background
   - Focus: Lime 500 focus ring
 
@@ -157,7 +157,7 @@ Below converter card, horizontal tab list.
 - Each tab: uppercase (Preset 3, Neutral 200)
 - Active tab: Lime 500 underline (2–3px), Neutral 50 text
 - Inactive tabs: Neutral 200 text, no underline
-- FAVORITES and LOG tabs show badge (rounded rectangle, Lime 500 background, Neutral 900 text, Preset 5)
+- FAVORITES and LOG tabs show badge (rounded rectangle, Lime 800 background, Lime 500 text, Preset 5)
 - Badge shows "0" when empty, or actual count
 - Hover (inactive tabs): text lightens to Neutral 100
 - Focus: Lime 500 focus ring around tab
@@ -177,9 +177,9 @@ Below converter card, horizontal tab list.
 
 ### 8a. Stats Row
 
-Four stat boxes in a horizontal row (4 columns desktop, 2×2 mobile). Each box: Neutral 600 background, rounded corners, padding.
+Four stat boxes in a horizontal row (4 columns desktop, 2×2 mobile). Each box: Neutral 700 background, rounded corners, padding.
 
-| Stat | Label (Preset 5, Neutral 200) | Value (Preset 2 Bold, Neutral 50) |
+| Stat | Label (Preset 4, Neutral 50) | Value (Preset 2, Neutral 50) |
 |------|-------------------------------|-----------------------------------|
 | OPEN | "OPEN" | Opening rate (e.g., 0.8516) |
 | LAST | "LAST" | Latest rate (e.g., 0.8530) |
@@ -191,7 +191,7 @@ Four stat boxes in a horizontal row (4 columns desktop, 2×2 mobile). Each box: 
 Row of pill buttons to the right of stats (or below on mobile):
 
 - Options: 1D | 1W | 1M | 3M | 1Y | 5Y
-- Active pill: Lime 500 background, Neutral 900 text
+- Active pill: Neutral 500 background, Neutral 50 text
 - Inactive pills: Neutral 600 background, Neutral 300 border, Neutral 200 text
 - Hover: Neutral 500 background
 - Focus: Lime 500 focus ring
@@ -199,16 +199,16 @@ Row of pill buttons to the right of stats (or below on mobile):
 
 ### 8c. Chart Area
 
-Large chart container below stats and time selector.
+Large chart container (Neutral 700 background) below stats and time selector.
 
-- Header line: "USD/EUR" pair label (Preset 2, Neutral 50, bold) on left, "0.8530 · MAY 14 16:00 CET" (Preset 5, Neutral 200) on right
+- Header line: "USD/EUR" pair label (Preset 3 Medium, Neutral 50) on left, "0.8530 · MAY 14 16:00 CET" (Preset 5, Neutral 50) on right
 - Chart type: line chart with area fill (gradient from Lime 500 to transparent below the line)
 - Y-axis: rate values (e.g., 0.8421, 0.8516, 0.8612) as Neutral 200 text (Preset 6), left side
 - X-axis: dates (e.g., Apr 14, Apr 21, Apr 28) as Neutral 200 text (Preset 6), bottom
 - Line color: Lime 500
 - Area fill: Lime 500 gradient with transparency
-- Grid lines: Neutral 400 horizontal dashed lines at major y-axis values
-- Hover crosshair (stretch goal): vertical line + tooltip with exact date and rate
+- Grid lines: Neutral 500 horizontal dashed lines at major y-axis values
+- Hover crosshair: built-in via lightweight-charts, vertical line + tooltip with exact date and rate
 
 ### 8d. History Empty/Error States
 
