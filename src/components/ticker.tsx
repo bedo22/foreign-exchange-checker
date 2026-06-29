@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useStore } from '../store'
-import { fetchRate } from '../api'
-import type { Rate } from '../types'
-import { POPULAR_CURRENCIES, DEFAULT_PAIR } from '../types'
+import { fetchHistory } from '../api'
+import { TICKER_CURRENCIES, DEFAULT_PAIR } from '../types'
+import { formatNumber } from '../lib/utils'
 
 interface TickerItem {
   pair: string
@@ -19,11 +19,19 @@ export function Ticker() {
     async function load() {
       const results: TickerItem[] = []
       const base = DEFAULT_PAIR.from
-      for (const quote of POPULAR_CURRENCIES) {
+      const today = new Date().toISOString().slice(0, 10)
+      const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10)
+      for (const quote of TICKER_CURRENCIES) {
         if (quote === base) continue
         try {
-          const r: Rate = await fetchRate(base, quote, provider)
-          results.push({ pair: `${base}/${quote}`, rate: r.rate, change: 0 })
+          const data = await fetchHistory(base, quote, yesterday, today, provider)
+          if (data.length >= 2) {
+            const latest = data[data.length - 1].rate
+            const previous = data[0].rate
+            results.push({ pair: `${base}/${quote}`, rate: latest, change: ((latest - previous) / previous) * 100 })
+          } else if (data.length === 1) {
+            results.push({ pair: `${base}/${quote}`, rate: data[0].rate, change: 0 })
+          }
         } catch {
           /* skip */
         }
@@ -37,26 +45,29 @@ export function Ticker() {
   if (!items.length) return null
 
   return (
-    <div className="h-8 bg-lime-500 flex items-center overflow-hidden">
-      <span className="flex items-center gap-2 h-full px-3 bg-lime-500 shrink-0">
-        <span className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
-        <span className="text-[10px] font-medium text-neutral-900 uppercase tracking-wider">
+    <div className="h-10 bg-neutral-700 flex items-center overflow-hidden">
+      <span className="flex items-center gap-2 h-full px-4 bg-lime-500 shrink-0">
+        <span className="w-[6px] h-[6px] rounded-full bg-neutral-900 shrink-0" />
+        <span className="text-xs font-medium text-neutral-900 uppercase tracking-[0.5px]">
           Live markets
         </span>
       </span>
       <div className="flex items-center gap-4 overflow-x-auto px-3 [&::-webkit-scrollbar]:hidden">
-        {items.map((item) => (
-          <div key={item.pair} className="flex items-center gap-2 shrink-0 text-[10px]">
-            <span className="text-neutral-900 font-medium">{item.pair}</span>
-            <span className="text-neutral-900 font-bold">{item.rate.toFixed(4)}</span>
-            <span className="flex items-center gap-0.5 text-neutral-900">
-              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor">
-                <path d="M4 0l4 5H0z" />
-              </svg>
-              0.0%
-            </span>
-          </div>
-        ))}
+        {items.map((item) => {
+          const isUp = item.change >= 0
+          return (
+            <div key={item.pair} className="flex items-center gap-3 shrink-0 text-xs py-3 px-5 border-r border-neutral-500">
+              <span className="text-neutral-50 font-medium">{item.pair}</span>
+              <span className="text-neutral-50 font-bold">{formatNumber(item.rate, 4)}</span>
+              <span className={`flex items-center gap-0.5 ${isUp ? 'text-green-500' : 'text-red-500'}`}>
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" className={isUp ? '' : 'rotate-180'}>
+                  <path d="M4 0l4 5H0z" />
+                </svg>
+                {formatNumber(item.change, 1)}%
+              </span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

@@ -23,11 +23,11 @@ function App() {
 
   return (
     <div className="min-h-screen bg-neutral-900 text-neutral-50 font-mono">
-      <div className="mx-auto max-w-screen-xl">
-        <Header />
-        <Ticker />
+      <Header />
+      <Ticker />
+      <div className="mx-auto max-w-[1100px] px-8">
         <Converter />
-        <section className="px-4">
+        <section>
           <nav className="flex gap-6 border-b border-neutral-400 mb-4" role="tablist">
             {TABS.map((t) => (
               <button
@@ -35,7 +35,7 @@ function App() {
                 role="tab"
                 aria-selected={tab === t.key}
                 onClick={() => setTab(t.key)}
-                className={`relative py-2 text-xs uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-colors ${
+                className={`relative py-2 text-base uppercase tracking-[1px] focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-colors ${
                   tab === t.key
                     ? 'text-neutral-50 font-bold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-lime-500'
                     : 'text-neutral-200 hover:text-neutral-100'
@@ -43,7 +43,7 @@ function App() {
               >
                 {t.label}
                 {(t.key === 'favorites' || t.key === 'log') && (
-                  <span className="ml-1.5 px-1.5 py-0.5 rounded text-[9px] bg-lime-800 text-lime-500">
+                  <span className="ml-1.5 px-1.5 py-0.5 rounded text-xs tracking-[0.5px] bg-lime-800 text-lime-500">
                     {t.key === 'favorites' ? favorites.length : log.length}
                   </span>
                 )}

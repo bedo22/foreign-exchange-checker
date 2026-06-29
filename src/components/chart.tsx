@@ -23,6 +23,7 @@ export function Chart({ data, height = 300 }: Props) {
       layout: {
         background: { type: ColorType.Solid, color: '#171719' },
         textColor: '#9D9D9D',
+        attributionLogo: false,
       },
       grid: {
         vertLines: { color: '#2E2E2E' },

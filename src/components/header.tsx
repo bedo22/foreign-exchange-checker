@@ -7,16 +7,12 @@ export function Header() {
   const count = provider === 'cbe' ? 19 : currencies.length || 170
 
   return (
-    <header className="flex items-center justify-between h-12 px-4">
-      <span className="flex items-center gap-2 text-sm font-bold tracking-wider">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-          <rect width="20" height="20" rx="4" fill="#CEF739" />
-          <path d="M13 2L7 11h3l-2 7 8-10h-4l3-6H13z" fill="#0A0A0A" />
-        </svg>
-        FX_CHECKER
+    <header className="flex items-center justify-between h-[66px] px-6">
+      <span className="flex items-center">
+        <img src="/icons/logo.svg" alt="FX Checker" className="h-[26px]" />
       </span>
       <div className="flex items-center gap-2">
-        <span className="text-[10px] text-neutral-200 font-medium tracking-wider uppercase">
+        <span className="text-xs text-neutral-200 font-medium tracking-[0.5px] uppercase">
           {count} Currencies · EOD · {provider === 'blended' ? 'Blended' : 'CBE'}
         </span>
         <button

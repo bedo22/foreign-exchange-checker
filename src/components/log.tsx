@@ -1,4 +1,5 @@
 import { useStore } from '../store'
+import { formatNumber } from '../lib/utils'
 import type { LogEntry } from '../types'
 
 function relativeTime(iso: string): string {
@@ -26,14 +27,14 @@ export function Log() {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <span className="text-xs font-bold uppercase tracking-wider text-neutral-50">Conversion log</span>
+        <span className="text-base font-bold uppercase tracking-[1px] text-neutral-50">Conversion log</span>
         <div className="flex items-center gap-3">
-          <span className="text-[10px] text-neutral-200">
+          <span className="text-xs text-neutral-200 tracking-[0.5px]">
             {log.length} {log.length === 1 ? 'Logged' : 'Logged'}
           </span>
           <button
             onClick={clearLog}
-            className="text-[10px] px-2 py-1 rounded border border-neutral-400 text-neutral-200 hover:text-red-500 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors"
+            className="text-xs px-2 py-1 rounded border border-neutral-400 text-neutral-200 hover:text-red-500 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors"
           >
             Clear all
           </button>
@@ -45,25 +46,22 @@ export function Log() {
             key={entry.timestamp}
             className="flex items-center gap-3 bg-neutral-600 rounded-lg p-3 hover:bg-neutral-500 transition-colors"
           >
-            <span className="text-[10px] text-neutral-200 w-10 shrink-0">
+            <span className="text-xs text-neutral-200 w-12 shrink-0 tracking-[0.5px]">
               {relativeTime(entry.timestamp)}
             </span>
-            <span className="text-xs text-neutral-50 flex-1">
+            <span className="text-base font-medium text-neutral-50 flex-1 tracking-[1px]">
               {entry.from} &rarr; {entry.to}
             </span>
             <div className="text-right">
-              <div className="text-xs text-neutral-50">{entry.amount.toFixed(2)}</div>
-              <div className="text-xs text-lime-500">{entry.received.toFixed(2)}</div>
+              <div className="text-base text-neutral-50">{formatNumber(entry.amount, 2)}</div>
+              <div className="text-base text-lime-500">{formatNumber(entry.received, 2)}</div>
             </div>
             <button
               onClick={() => removeLog(entry.timestamp)}
-              className="shrink-0 text-neutral-400 hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-colors"
+              className="shrink-0 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-colors"
               aria-label="Delete log entry"
             >
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 3h8M4.5 3V2a1 1 0 011-1h1a1 1 0 011 1v1M9.5 3v7a1 1 0 01-1 1h-5a1 1 0 01-1-1V3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M5 5.5v3M7 5.5v3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-              </svg>
+              <img src="/icons/icon-delete.svg" alt="" className="w-3 h-3 opacity-60 hover:opacity-100" />
             </button>
           </div>
         ))}

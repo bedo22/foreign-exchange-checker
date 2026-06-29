@@ -33,6 +33,8 @@ export interface LogEntry {
 
 export const POPULAR_CURRENCIES = ['USD', 'EUR', 'GBP'] as const
 
+export const TICKER_CURRENCIES = ['EUR', 'GBP', 'EGP', 'SAR', 'AED', 'JPY', 'CHF']
+
 export const COMPARE_CURRENCIES = ['EUR', 'GBP', 'USD', 'SAR', 'AED', 'JPY', 'CHF', 'CAD', 'AUD']
 
 export const CBE_CURRENCIES = [

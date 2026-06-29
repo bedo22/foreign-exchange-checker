@@ -44,9 +44,9 @@ beforeEach(() => {
 })
 
 describe('App', () => {
-  it('renders the header with FX_CHECKER', () => {
+  it('renders the header with FX Checker logo', () => {
     render(<App />)
-    expect(screen.getByText('FX_CHECKER')).toBeInTheDocument()
+    expect(screen.getByAltText('FX Checker')).toBeInTheDocument()
   })
 
   it('renders the converter section', () => {

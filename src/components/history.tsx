@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useStore } from '../store'
 import { fetchHistory } from '../api'
 import { Chart } from './chart'
+import { formatNumber } from '../lib/utils'
 import type { Rate } from '../types'
 
 type Range = '1D' | '1W' | '1M' | '3M' | '1Y' | '5Y'
@@ -70,45 +71,46 @@ export function History() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
-        <StatBox label="Open" value={open.toFixed(4)} />
-        <StatBox label="Last" value={latest.toFixed(4)} />
-        <StatBox
-          label="Change"
-          value={`${change >= 0 ? '+' : ''}${change.toFixed(4)}`}
-          color={change >= 0 ? 'text-green-500' : 'text-red-500'}
-        />
-        <StatBox
-          label="% Change"
-          value={`${pctChange >= 0 ? '+' : ''}${pctChange.toFixed(2)}%`}
-          color={pctChange >= 0 ? 'text-green-500' : 'text-red-500'}
-        />
-      </div>
-
-      <div className="flex flex-wrap gap-2 mb-4">
-        {RANGES.map((r) => (
-          <button
-            key={r}
-            onClick={() => setRange(r)}
-            className={`px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors ${
-              r === range
-                ? 'bg-neutral-500 text-neutral-50'
-                : 'bg-neutral-600 text-neutral-200 border border-neutral-400 hover:bg-neutral-500'
-            }`}
-          >
-            {r}
-          </button>
-        ))}
+      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 flex-1">
+          <StatBox label="Open" value={formatNumber(open, 4)} />
+          <StatBox label="Last" value={formatNumber(latest, 4)} />
+          <StatBox
+            label="Change"
+            value={`${change >= 0 ? '+' : ''}${formatNumber(change, 4)}`}
+            color={change >= 0 ? 'text-green-500' : 'text-red-500'}
+          />
+          <StatBox
+            label="% Change"
+            value={`${pctChange >= 0 ? '+' : ''}${formatNumber(pctChange, 2)}%`}
+            color={pctChange >= 0 ? 'text-green-500' : 'text-red-500'}
+          />
+        </div>
+        <div className="flex flex-wrap gap-2 shrink-0">
+          {RANGES.map((r) => (
+            <button
+              key={r}
+              onClick={() => setRange(r)}
+              className={`px-3 py-1 rounded-full text-xs font-medium uppercase tracking-[0.5px] focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors ${
+                r === range
+                  ? 'bg-neutral-500 text-neutral-50'
+                  : 'bg-neutral-600 text-neutral-200 border border-neutral-400 hover:bg-neutral-500'
+              }`}
+            >
+              {r}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="bg-neutral-700 rounded-xl p-4">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-medium text-neutral-50">
+          <span className="text-base font-medium text-neutral-50 tracking-[1px]">
             {pair.from}/{pair.to}
           </span>
           {latest > 0 && (
-            <span className="text-[10px] text-neutral-50">
-              {latest.toFixed(4)} &middot; {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+            <span className="text-xs text-neutral-50">
+              {formatNumber(latest, 4)} &middot; {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
             </span>
           )}
         </div>
@@ -134,8 +136,8 @@ export function History() {
 function StatBox({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
     <div className="bg-neutral-700 rounded-xl p-3">
-      <div className="text-[10px] text-neutral-200 uppercase tracking-wider">{label}</div>
-      <div className={`text-xs md:text-sm font-bold mt-1 ${color ?? 'text-neutral-50'}`}>{value}</div>
+      <div className="text-sm text-neutral-200 uppercase tracking-[1px]">{label}</div>
+      <div className={`text-xl font-bold mt-1 ${color ?? 'text-neutral-50'}`}>{value}</div>
     </div>
   )
 }

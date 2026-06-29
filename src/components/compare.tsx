@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useStore } from '../store'
 import { fetchRate } from '../api'
 import { COMPARE_CURRENCIES } from '../types'
+import { currencyFlag, formatNumber } from '../lib/utils'
 import type { Rate } from '../types'
 
 export function Compare() {
@@ -45,12 +46,12 @@ export function Compare() {
     <div>
       <div className="flex items-center justify-between mb-4">
         <div>
-          <span className="text-[10px] text-neutral-200 uppercase tracking-wider">Multi-currency</span>
-          <span className="text-xs font-bold text-neutral-50 ml-2">
-            {numAmount.toFixed(2)} FROM {pair.from}
+          <span className="text-base text-neutral-200 uppercase tracking-[1px]">Multi-currency</span>
+          <span className="text-base font-bold text-neutral-50 ml-2 tracking-[1px]">
+            {formatNumber(numAmount, 2)} FROM {pair.from}
           </span>
         </div>
-        <span className="text-[10px] text-neutral-200">{targets.length} pairs</span>
+        <span className="text-xs text-neutral-200 tracking-[0.5px]">{targets.length} pairs</span>
       </div>
       {loading ? (
         <div className="flex items-center justify-center py-8 text-xs text-neutral-200">Loading...</div>
@@ -71,16 +72,18 @@ export function Compare() {
                 key={code}
                 className="flex items-center gap-3 bg-neutral-600 rounded-lg p-3 hover:bg-neutral-500 transition-colors"
               >
-                <span className="w-7 h-7 rounded-full bg-neutral-500 flex items-center justify-center text-xs font-bold text-neutral-50 shrink-0">
-                  {code[0]}
-                </span>
+                {currencyFlag(code) ? (
+                  <img src={currencyFlag(code)} alt="" className="w-6 h-5 rounded-[2px] object-cover shrink-0" />
+                ) : (
+                  <span className="w-6 h-5 rounded-[2px] bg-neutral-500 shrink-0" />
+                )}
                 <div className="flex-1 min-w-0">
-                  <div className="text-xs font-bold text-neutral-50">{code}</div>
-                  <div className="text-[10px] text-neutral-200 truncate">{rate ? `@ ${rate.toFixed(4)}` : '—'}</div>
+                  <div className="text-base font-bold text-neutral-50 tracking-[1px]">{code}</div>
+                  <div className="text-xs text-neutral-200 truncate tracking-[0.5px]">{rate ? `@ ${formatNumber(rate, 4)}` : '—'}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs font-bold text-neutral-50">
-                    {rate ? (numAmount * rate).toFixed(2) : '—'}
+                  <div className="text-xl font-bold text-neutral-50 tracking-[-0.5px]">
+                    {rate ? formatNumber(numAmount * rate, 2) : '—'}
                   </div>
                 </div>
                 <button
@@ -88,18 +91,11 @@ export function Compare() {
                   className="shrink-0 text-neutral-400 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-transform"
                   aria-label={isFavorite({ from: pair.from, to: code }) ? 'Unfavorite' : 'Favorite'}
                 >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 10 10"
-                    fill={isFavorite({ from: pair.from, to: code }) ? '#CEF739' : 'none'}
-                  >
-                    <path
-                      d="M5 1l1.1 2.3 2.6.4-1.9 1.8.5 2.5L5 6.7l-2.3 1.3.5-2.5L1.3 3.7l2.6-.4L5 1z"
-                      stroke={isFavorite({ from: pair.from, to: code }) ? '#CEF739' : 'currentColor'}
-                      strokeWidth="0.8"
-                    />
-                  </svg>
+                  <img
+                    src={isFavorite({ from: pair.from, to: code }) ? '/icons/icon-star-filled.svg' : '/icons/icon-star.svg'}
+                    alt=""
+                    className="w-3.5 h-3.5"
+                  />
                 </button>
               </div>
             )

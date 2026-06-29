@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useStore } from '../store'
 import { fetchRate } from '../api'
+import { formatNumber } from '../lib/utils'
 import type { Rate, Favorite } from '../types'
 
 export function Favorites() {
@@ -36,14 +37,7 @@ export function Favorites() {
   if (!favorites.length) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-neutral-400 mb-3">
-          <path
-            d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            fill="none"
-          />
-        </svg>
+        <img src="/icons/icon-star.svg" alt="" className="w-6 h-6 opacity-40 mb-3" />
         <span className="text-xs text-neutral-200">
           Pin your favorite pairs to track them here
         </span>
@@ -54,8 +48,8 @@ export function Favorites() {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <span className="text-xs font-bold uppercase tracking-wider text-neutral-50">Pinned pairs</span>
-        <span className="text-[10px] text-neutral-200">
+        <span className="text-base font-bold uppercase tracking-[1px] text-neutral-50">Pinned pairs</span>
+        <span className="text-xs text-neutral-200 tracking-[0.5px]">
           {favorites.length} {favorites.length === 1 ? 'Favorite' : 'Favorites'}
         </span>
       </div>
@@ -69,21 +63,19 @@ export function Favorites() {
               className="flex items-center gap-3 bg-neutral-600 rounded-lg p-3 hover:bg-neutral-500 transition-colors"
             >
               <div className="flex-1">
-                <span className="text-xs text-neutral-50">
+                <span className="text-base font-medium text-neutral-50 tracking-[1px]">
                   {f.from} <span className="text-neutral-200">&rarr;</span> {f.to}
                 </span>
               </div>
-              <span className="text-xs font-bold text-neutral-50">
-                {loading ? '—' : rate ? rate.toFixed(4) : '—'}
+              <span className="text-xl font-bold text-neutral-50 tracking-[-0.5px]">
+                {loading ? '—' : rate ? formatNumber(rate, 4) : '—'}
               </span>
               <button
                 onClick={() => toggleFavorite(f)}
-                className="shrink-0 text-lime-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-transform"
+                className="shrink-0 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-lime-500 rounded transition-transform"
                 aria-label="Unpin favorite"
               >
-                <svg width="14" height="14" viewBox="0 0 10 10" fill="currentColor">
-                  <path d="M5 1l1.1 2.3 2.6.4-1.9 1.8.5 2.5L5 6.7l-2.3 1.3.5-2.5L1.3 3.7l2.6-.4L5 1z" />
-                </svg>
+                <img src="/icons/icon-star-filled.svg" alt="" className="w-3.5 h-3.5" />
               </button>
             </div>
           )

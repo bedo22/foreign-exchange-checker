@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { fetchCurrencies } from '../api'
+import { currencyFlag } from '../lib/utils'
 import { POPULAR_CURRENCIES } from '../types'
 
 interface Props {
@@ -59,7 +60,7 @@ export function CurrencyPicker({ onSelect, onClose }: Props) {
     >
       <div className="bg-neutral-700 rounded-xl w-full max-w-sm max-h-[80vh] flex flex-col">
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-500">
-          <span className="text-sm font-bold uppercase tracking-wider text-neutral-50">
+          <span className="text-base font-bold uppercase tracking-[1px] text-neutral-50">
             Select Currency
           </span>
           <button
@@ -74,16 +75,7 @@ export function CurrencyPicker({ onSelect, onClose }: Props) {
         </div>
         <div className="px-4 py-2">
           <div className="relative">
-            <svg
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 text-neutral-300"
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-            >
-              <circle cx="5" cy="5" r="4" stroke="currentColor" strokeWidth="1.3" />
-              <path d="M8 8l3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-            </svg>
+            <img src="/icons/icon-search.svg" alt="" className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 opacity-60" />
             <input
               ref={inputRef}
               value={search}
@@ -105,7 +97,7 @@ export function CurrencyPicker({ onSelect, onClose }: Props) {
             <>
               {popular.length > 0 && (
                 <>
-                  <div className="text-[10px] font-medium text-neutral-200 uppercase tracking-wider py-1.5">
+                  <div className="text-xs font-medium text-neutral-200 uppercase tracking-[0.5px] py-1.5">
                     Popular
                   </div>
                   {popular.map((c) => (
@@ -114,12 +106,14 @@ export function CurrencyPicker({ onSelect, onClose }: Props) {
                       onClick={() => onSelect(c.code)}
                       className="w-full flex items-center gap-3 px-2 py-2 rounded-lg text-left hover:bg-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500"
                     >
-                      <span className="w-5 h-5 rounded-full bg-neutral-500 flex items-center justify-center text-[10px] font-bold text-neutral-50">
-                        {c.code[0]}
-                      </span>
+                      {currencyFlag(c.code) ? (
+                        <img src={currencyFlag(c.code)} alt="" className="w-5 h-4 rounded-[2px] object-cover shrink-0" />
+                      ) : (
+                        <span className="w-5 h-4 rounded-[2px] bg-neutral-500 shrink-0" />
+                      )}
                       <div>
-                        <div className="text-xs font-medium text-neutral-50">{c.code}</div>
-                        <div className="text-[10px] text-neutral-200">{c.name}</div>
+                        <div className="text-base font-medium text-neutral-50 tracking-[1px]">{c.code}</div>
+                        <div className="text-sm text-neutral-200 tracking-[1px]">{c.name}</div>
                       </div>
                     </button>
                   ))}
@@ -127,7 +121,7 @@ export function CurrencyPicker({ onSelect, onClose }: Props) {
               )}
               {rest.length > 0 && (
                 <>
-                  <div className="text-[10px] font-medium text-neutral-200 uppercase tracking-wider py-1.5 mt-1">
+                  <div className="text-xs font-medium text-neutral-200 uppercase tracking-[0.5px] py-1.5 mt-1">
                     Other currencies
                   </div>
                   {rest.map((c) => (
@@ -136,12 +130,14 @@ export function CurrencyPicker({ onSelect, onClose }: Props) {
                       onClick={() => onSelect(c.code)}
                       className="w-full flex items-center gap-3 px-2 py-2 rounded-lg text-left hover:bg-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500"
                     >
-                      <span className="w-5 h-5 rounded-full bg-neutral-500 flex items-center justify-center text-[10px] font-bold text-neutral-50">
-                        {c.code[0]}
-                      </span>
+                      {currencyFlag(c.code) ? (
+                        <img src={currencyFlag(c.code)} alt="" className="w-5 h-4 rounded-[2px] object-cover shrink-0" />
+                      ) : (
+                        <span className="w-5 h-4 rounded-[2px] bg-neutral-500 shrink-0" />
+                      )}
                       <div>
-                        <div className="text-xs font-medium text-neutral-50">{c.code}</div>
-                        <div className="text-[10px] text-neutral-200">{c.name}</div>
+                        <div className="text-base font-medium text-neutral-50 tracking-[1px]">{c.code}</div>
+                        <div className="text-sm text-neutral-200 tracking-[1px]">{c.name}</div>
                       </div>
                     </button>
                   ))}
