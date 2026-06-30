@@ -58,30 +58,31 @@ export function Converter() {
   }
 
   return (
-    <section className="py-6">
-      <h2 className="text-xl uppercase tracking-wider text-neutral-50 mb-4">
+    <section className="pt-12 pb-6">
+      <h2 className="text-preset-2 uppercase text-neutral-50 mb-4">
         Check the rate
       </h2>
-      <div className="bg-neutral-700 rounded-[20px]">
-        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-4 p-4">
-          <div className="flex-1">
-            <div className="bg-neutral-600 rounded-lg p-3">
-              <div className="text-xs text-neutral-200 uppercase tracking-[0.5px] mb-2">Send</div>
-              <div className="flex items-center gap-2">
+      <div className="bg-neutral-700 rounded-[20px] shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-6 p-5">
+          <div className="w-full md:w-[450px]">
+            <div className="bg-neutral-600 rounded-2xl border border-neutral-500 p-5">
+              <div className="text-preset-4 text-neutral-100 uppercase mb-5">Send</div>
+              <div className="flex items-center justify-between">
                 <input
                   type="text"
                   inputMode="decimal"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="0"
-                  className="flex-1 bg-transparent text-neutral-50 text-preset-1-tablet md:text-preset-1 font-bold outline-none placeholder-neutral-400 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  size={6}
+                  className="min-w-0 bg-transparent text-neutral-50 text-preset-1-tablet md:text-preset-1 font-bold outline-none placeholder-neutral-400 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 />
                 <button
                   onClick={() => setPicker('from')}
-                  className="flex items-center gap-1.5 px-2 py-1 rounded text-base font-medium text-neutral-50 hover:bg-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500"
+                  className="shrink-0 flex items-center gap-2.5 px-2.5 py-2.5 rounded-lg border border-neutral-400 bg-neutral-500 text-base font-medium text-neutral-50 hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-lime-500"
                 >
                   {currencyFlag(pair.from) && (
-                    <img src={currencyFlag(pair.from)} alt="" className="w-4 h-3 rounded-[2px] object-cover" />
+                    <img src={currencyFlag(pair.from)} alt="" className="w-5 h-5 rounded-[2px] object-cover" />
                   )}
                   {pair.from}
                   <img src="/icons/icon-chevron-down.svg" alt="" className="w-2 h-2" />
@@ -92,26 +93,26 @@ export function Converter() {
 
           <button
             onClick={handleSwap}
-            className="shrink-0 w-8 h-8 rounded-lg bg-neutral-600 border border-neutral-500 flex items-center justify-center
+            className="shrink-0 w-12 h-12 rounded-lg bg-neutral-600 border border-neutral-500 flex items-center justify-center
               hover:bg-lime-500 group focus:outline-none focus:ring-2 focus:ring-lime-500 self-center md:self-auto"
             aria-label="Swap currencies"
           >
-            <img src="/icons/icon-exchange-vertical.svg" alt="" className="w-3.5 h-3.5 brightness-0 invert group-hover:brightness-0 group-hover:invert-0" />
+            <img src="/icons/icon-exchange.svg" alt="" className="w-5 h-5 brightness-0 invert group-hover:brightness-0 group-hover:invert-0" />
           </button>
 
-          <div className="flex-1">
-            <div className="bg-neutral-600 rounded-lg p-3">
-              <div className="text-xs text-neutral-200 uppercase tracking-[0.5px] mb-2">Receive</div>
-              <div className="flex items-center gap-2">
-                <span className="flex-1 text-preset-1-tablet md:text-preset-1 font-bold text-lime-500">
+          <div className="w-full md:w-[450px]">
+            <div className="bg-neutral-600 rounded-2xl border border-neutral-500 p-5">
+              <div className="text-preset-4 text-neutral-100 uppercase mb-5">Receive</div>
+              <div className="flex items-center justify-between">
+                <span className="min-w-0 text-preset-1-tablet md:text-preset-1 font-bold text-lime-500">
                   {loading ? '—' : error ? '—' : formatNumber(received, 2)}
                 </span>
                 <button
                   onClick={() => setPicker('to')}
-                  className="flex items-center gap-1.5 px-2 py-1 rounded text-base font-medium text-neutral-50 hover:bg-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500"
+                  className="shrink-0 flex items-center gap-2.5 px-2.5 py-2.5 rounded-lg border border-neutral-400 bg-neutral-500 text-base font-medium text-neutral-50 hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-lime-500"
                 >
                   {currencyFlag(pair.to) && (
-                    <img src={currencyFlag(pair.to)} alt="" className="w-4 h-3 rounded-[2px] object-cover" />
+                    <img src={currencyFlag(pair.to)} alt="" className="w-5 h-5 rounded-[2px] object-cover" />
                   )}
                   {pair.to}
                   <img src="/icons/icon-chevron-down.svg" alt="" className="w-2 h-2" />
@@ -121,10 +122,10 @@ export function Converter() {
           </div>
         </div>
 
-        <div className="h-px bg-neutral-500 mx-4" />
+        <div className="h-px bg-neutral-500" />
 
-        <div className="flex flex-wrap items-center justify-between gap-3 p-4">
-          <span className="text-xs text-neutral-50">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
+          <span className="text-preset-5 text-neutral-50">
             {loading
               ? 'Loading...'
               : error
@@ -136,7 +137,7 @@ export function Converter() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => toggleFavorite(pair)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-medium uppercase tracking-wider border focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-preset-5-medium uppercase border focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors ${
                 isFavorite(pair)
                   ? 'bg-lime-500 text-neutral-900 border-lime-500'
                   : 'bg-neutral-600 text-neutral-200 border-neutral-400 hover:bg-neutral-500'
@@ -145,15 +146,15 @@ export function Converter() {
               <img
                 src={isFavorite(pair) ? '/icons/icon-star-filled.svg' : '/icons/icon-star.svg'}
                 alt=""
-                className={`w-3 h-3 ${isFavorite(pair) ? 'brightness-0' : ''}`}
+                className={`w-4 h-4 ${isFavorite(pair) ? 'brightness-0' : ''}`}
               />
               {isFavorite(pair) ? 'Favorited' : 'Favorite'}
             </button>
             <button
               onClick={handleLog}
               disabled={loading || error || numAmount === 0}
-              className="px-3 py-1.5 rounded-lg text-[10px] font-medium uppercase tracking-wider border border-neutral-400 text-neutral-200
-                hover:bg-neutral-500 focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="px-3 py-2 rounded-lg text-preset-5-medium uppercase border border-lime-500 text-neutral-200
+                hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-lime-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {logged ? 'Logged!' : 'Log conversion'}
             </button>
