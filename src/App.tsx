@@ -22,7 +22,7 @@ function App() {
   const log = useStore((s) => s.log)
 
   return (
-    <div className="min-h-screen bg-neutral-900 text-neutral-50 font-mono">
+    <div className="min-h-screen bg-neutral-900 text-neutral-50 font-mono overflow-x-hidden">
       <Header />
       <Ticker />
       <div className="mx-auto max-w-[1100px] px-8">

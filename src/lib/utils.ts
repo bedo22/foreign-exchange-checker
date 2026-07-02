@@ -27,3 +27,10 @@ export function formatNumber(value: number, decimals: number): string {
     maximumFractionDigits: decimals,
   })
 }
+
+export function formatInputAmount(value: string): string {
+  // Add thousands commas to the integer part, preserve decimals
+  const parts = value.split('.')
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  return parts.join('.')
+}

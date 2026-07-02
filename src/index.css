@@ -54,5 +54,13 @@
   --color-lime-800: #283300;
   --color-green-500: #42EB05;
   --color-red-500: #FF4141;
-  --font-family-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+  display: none;
 }
